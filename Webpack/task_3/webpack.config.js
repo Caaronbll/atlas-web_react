@@ -44,6 +44,7 @@ module.exports = {
         compress: true,
         port: 8564,
     },
+    devtool: 'inline-source-map',
     plugins: [
         new HTMLWebpackPlugin({
           filename: 'public/index.html'
