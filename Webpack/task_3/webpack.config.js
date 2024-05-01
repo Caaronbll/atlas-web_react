@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        header: './modules/body/body.js',
+        header: './modules/header/header.js',
         body: './modules/body/body.js',
         footer: './modules/footer/footer.js',
     },
