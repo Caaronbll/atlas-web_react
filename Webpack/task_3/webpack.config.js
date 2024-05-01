@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -14,6 +15,11 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: '[name].bundle.js'
+    },
+    optimization: {
+        splitChunks: {
+          chunks: 'all',
+        },
     },
     mode: 'development', // Set mode to development
     module: {
@@ -33,18 +39,15 @@ module.exports = {
             },
         ],
     },
-    devServer: { // Configure webpack-dev-server
-        contentBase: path.join(__dirname, 'public'),
+    devServer: {
+        contentBase: path.join(__dirname, './public'),
         compress: true,
-        port: 8564, // Set the port to 8564
+        port: 8564,
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(), // Enable hot module replacement
-        new HtmlWebpackPlugin({
-            title: 'My App', // The title of the HTML page
-            filename: 'index.html', // The name of the HTML file to generate
-            template: './src/index.html', // The template HTML file (optional)
-            inject: 'body', // Specify where to inject the script tags (head or body)
-        })
-    ]
+        new HTMLWebpackPlugin({
+          filename: 'public/index.html'
+        }),
+        new CleanWebpackPlugin()
+      ]
 };
