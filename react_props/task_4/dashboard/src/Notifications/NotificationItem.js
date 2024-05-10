@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function NotificationItem({ type, value, html }) {
   let listItem;
@@ -13,5 +14,19 @@ function NotificationItem({ type, value, html }) {
 
   return listItem;
 }
+
+NotificationItem.defaultProps = {
+  type: "default",
+  value: "",
+  html: {},
+};
+
+NotificationItem.propTypes = {
+  type: PropTypes.string,
+  value: PropTypes.string,
+  html: PropTypes.shape({
+    __html: PropTypes.string,
+  }),
+};
 
 export default NotificationItem;

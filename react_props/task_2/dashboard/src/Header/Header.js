@@ -1,6 +1,6 @@
 import React from "react";
-import holberton_logo from "../assets/holberton_logo.jpg";
 import "./Header.css";
+import former_holberton_logo from "../assets/holberton_logo.jpg";
 
 function Header() {
     return (
@@ -10,5 +10,5 @@ function Header() {
       </header>
     );
 }
-  
-  export default Header;
+
+export default Header;

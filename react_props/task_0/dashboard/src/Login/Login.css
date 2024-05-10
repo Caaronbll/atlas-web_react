@@ -1,3 +1,7 @@
-.login {
-    margin: 50px;
-  }
+:root {
+  --main-color: #e01d3f;
+}
+
+.App-body {
+  margin: 50px;
+}
