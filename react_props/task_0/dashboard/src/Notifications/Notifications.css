@@ -1,10 +1,12 @@
-:root {
-  --main-color: #e01d3f;
-}
+
 
 .Notifications {
-  border: 3px solid var(--main-color);
+  border: 3px dashed #e01d3f;
   padding: 50px;
+}
+
+.Notifications button img {
+  width: 10px;
 }
 
 li[data-priority="default"] {

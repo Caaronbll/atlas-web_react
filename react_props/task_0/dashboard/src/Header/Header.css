@@ -1,16 +1,13 @@
-:root {
-    --main-color: #e01d3f;
-  }
-  
-  .App-header {
+/* HEADER CSS */
+
+.App-header {
     display: flex;
     align-items: center;
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
+    color: #e01d3f;
+    border-bottom: 3px solid #e01d3f;
     font-size: 22px;
-    
-  }
-  
-  .App-header img {
+}
+
+.App-header img {
     width: 200px;
-  }
+}

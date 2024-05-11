@@ -1,21 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', // Entry point for your application
-  // Output configuration
+  entry: './src/index.js',
+  mode: 'development',
+  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist'), // Output directory for all the assets
+    path: path.resolve('../dist'),
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, '../dist'), 
-    },
-    compress: true, 
-    hot: true, 
-  },
-  devtool: 'inline-source-map',
-  mode: 'development',
   module: {
     rules: [
       {
@@ -23,52 +15,32 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
         },
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images/',
-            }
-          },
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader',
           {
             loader: 'image-webpack-loader',
             options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75
-              }
-            }
-          },
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          }
         ],
-      },
+      }
     ],
+  },
+  devServer: {
+    hot: true,
+    static: {
+      directory: path.join(__dirname, '../dist'),
+    },
+    compress: true,
+    port: 9000,
   },
 };

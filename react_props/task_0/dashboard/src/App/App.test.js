@@ -1,9 +1,11 @@
 import { shallow } from "enzyme";
+import React from "react";
 import App from "./App";
 
-describe("<App />", () => {
-  it("App renders without crashing", () => {
+describe("App", () => {
+  //doesnt crash
+  test("renders without crashing", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists()).toEqual(true);
+    expect(wrapper.exists()).toBe(true);
   });
 });
