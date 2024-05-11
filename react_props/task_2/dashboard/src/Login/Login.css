@@ -1,7 +1,5 @@
-:root {
-  --main-color: #e01d3f;
-}
+/* LOGIN CSS */
 
-.App-body {
-  margin: 50px;
+.App-login {
+    margin: 50px;
 }

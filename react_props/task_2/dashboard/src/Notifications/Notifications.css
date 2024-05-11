@@ -1,16 +1,18 @@
-:root {
-  --main-color: #e01d3f;
-}
+/* NOTIFICATIONS CSS */
 
 .Notifications {
-  border: 3px solid var(--main-color);
+  border: 3px dashed #e01d3f;
   padding: 50px;
 }
 
-li[data-priority="default"] {
+.Notifications button img {
+  width: 10px;
+}
+
+[data-notification-type="default"] {
   color: blue;
 }
 
-li[data-priority="urgent"] {
+[data-notification-type="urgent"] {
   color: red;
 }

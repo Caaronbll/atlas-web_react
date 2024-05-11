@@ -1,6 +1,10 @@
+// NOTIFICATIONS JS
+
 import React from "react";
 import "./Notifications.css";
 import { getLatestNotification } from '../utils/utils';
+import closeIcon from '../assets/close-icon.png';
+import NotificationItem from './NotificationItem';
 
 function Notifications() {
   const handleClick = () => {
@@ -10,16 +14,16 @@ function Notifications() {
   return (
     <div className="Notifications" style={{ position: 'relative', padding: '10px', marginBottom: '20px' }}>
       <button 
-        style={{ position: 'absolute', top: '10px', right: '10px', cursor: 'pointer' }} 
+        style={{ background: 'transparent', position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', border: 'none'}} 
         aria-label="Close"
         onClick={handleClick}>
-        x
+        <img src={closeIcon} alt="close-icon" />
       </button>
       <p>Here is the list of notifications</p>
       <ul>
-        <li data-priority="default">New course available</li>
-        <li data-priority="urgent">New resume available</li>
-        <li data-priority="urgent" dangerouslySetInnerHTML={{ __html: getLatestNotification() }}></li>
+        <NotificationItem type="default" value="New course available" />
+        <NotificationItem type="urgent" value="New resume available" />
+        <NotificationItem type="urgent" html={{ __html: getLatestNotification() }} />
       </ul>
     </div>
   );

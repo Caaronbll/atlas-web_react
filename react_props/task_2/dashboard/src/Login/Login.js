@@ -1,9 +1,12 @@
+// LOGIN JS
+
 import React from "react";
 import "./Login.css";
 
 function Login() {
   return (
-      <main className="App-body">
+    <React.Fragment>
+      <div className="App-login">
         <p>Login to access the full dashboard</p>
         <div>
           <label htmlFor="email">Email:</label>
@@ -12,7 +15,8 @@ function Login() {
           <input type="password" id="password" name="password" />
           <button>OK</button>
         </div>
-      </main>
+      </div>
+    </React.Fragment>
   );
 }
 
