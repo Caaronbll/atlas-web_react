@@ -44,6 +44,9 @@
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy",
       "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/mock/file.js"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/setupTests.js"
+    ]
   }
 }
