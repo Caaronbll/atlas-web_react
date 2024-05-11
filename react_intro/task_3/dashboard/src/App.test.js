@@ -1,24 +1,25 @@
 import { shallow } from "enzyme";
 import App from "./App";
 
-describe("<App />", () => {
-  it("App renders without crashing", () => {
+describe("App", () => {
+  //doesnt crash
+  test("renders without crashing", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists()).toEqual(true);
+    expect(wrapper.exists()).toBe(true);
   });
-  it("App renders a 'div' with the class App-header", () => {
+  //renders the header div
+    test("renders the header div", () => {
     const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-header")).toHaveLength(1);
+    expect(wrapper.find("header.App-header").exists()).toBe(true);
   });
-  it("App renders a div with the class App-body", () => {
+  //renders the main div
+  test("renders the main div", () => {
     const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-body")).toHaveLength(1);
+    expect(wrapper.find("main.App-body").exists()).toBe(true);
   });
-  it("App renders a div with the class App-footer", () => {
+  //renders the footer div
+    test("renders the footer div", () => {
     const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-footer")).toHaveLength(1);
+    expect(wrapper.find("footer.App-footer").exists()).toBe(true);
   });
 });
