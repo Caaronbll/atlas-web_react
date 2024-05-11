@@ -3,8 +3,12 @@
 }
 
 .Notifications {
-  border: 3px solid var(--main-color);
+  border: 3px dashed var(--main-color);
   padding: 50px;
+}
+
+.Notifications button img {
+  width: 10px;
 }
 
 li[data-priority="default"] {
