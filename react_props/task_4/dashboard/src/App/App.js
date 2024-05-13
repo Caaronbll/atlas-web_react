@@ -1,33 +1,27 @@
-import React from "react";
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
-import Login from "../Login/Login"
-import Notifications from "../Notifications/Notifications"
-import PropTypes from "prop-types";
-import CourseList from "../CourseList/CourseList";
-import "./App.css";
+// APP JS
 
-function App({ isLoggedIn }) {
+import React from "react";
+import "./App.css";
+import Notifications from "../Notifications/Notifications";
+import Header from "../Header/Header";
+import Login from "../Login/Login";
+import Footer from "../Footer/Footer";
+
+function App() {
   return (
-    <>
+    <React.Fragment>
       <Notifications />
       <div className="App">
         <Header />
+        <div className="App-body">
+          <Login />
+        </div>
+        <div className="App-footer">
+          <Footer />
+        </div>
       </div>
-      <div className="App-body">{!isLoggedIn ? <Login /> : <CourseList />}</div>
-      <div className="App-footer">
-        <Footer />
-      </div>
-    </>
+    </React.Fragment>
   );
 }
-
-App.defaultProps = {
-  isLoggedIn: false,
-};
-
-App.propTypes = {
-  isLoggedIn: PropTypes.bool,
-};
 
 export default App;

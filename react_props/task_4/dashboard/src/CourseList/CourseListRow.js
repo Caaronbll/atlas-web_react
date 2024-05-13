@@ -1,41 +1,42 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from'react';
+import PropTypes from 'prop-types';
 
-function CourseListRow({ isHeader = False, textFirstCell, textSecondCell = Null}) {
+function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
     let element;
-  
+
     if (isHeader === true) {
-      if (textSecondCell === null) {
-        element = <th colSpan="2">{textFirstCell}</th>;
-      } else {
+        if (textSecondCell === null) {
+            element = <th colSpan="2">{textFirstCell}</th>
+        } else {
+            element = (
+                <>
+                  <th>{textFirstCell}</th>
+                  <th>{textSecondCell}</th>
+                </>
+            );
+        }
+    } else {
         element = (
-          <>
-            <th>{textFirstCell}</th>
-            <th>{textSecondCell}</th>
-          </>
+            <>
+              <td>{textFirstCell}</td>
+              <td>{textSecondCell}</td>
+            </>
         );
-      }
-    } else if (isHeader === false) {
-      element = (
-        <>
-          <td>{textFirstCell}</td>
-          <td>{textSecondCell}</td>
-        </>
-      );
     }
-  
-    return <tr>{element}</tr>;
-  }
-  
-  CourseListRow.defaultProps = {
+    return (
+        <tr>{element}</tr>
+    );
+}
+
+CourseListRow.defaultProps = {
     isHeader: false,
     textSecondCell: null,
-  };
-  
-  CourseListRow.propTypes = {
+};
+
+CourseListRow.propTypes = {
     isHeader: PropTypes.bool,
     textFirstCell: PropTypes.string.isRequired,
     textSecondCell: PropTypes.string,
-  };
-  
-  export default CourseListRow;
+};
+
+export default CourseListRow;
