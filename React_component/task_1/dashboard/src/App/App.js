@@ -14,10 +14,34 @@ class App extends Component {
   // Props
   static defaultProps = {
     isLoggedIn: false,
+    logOut: () => {},
   };
   static propTypes = {
     isLoggedIn: PropTypes.bool,
+    logOut: PropTypes.func,
   }
+
+  componentDidMount() {
+    // Add event listener for keydown event
+    document.addEventListener("keydown", this.handleKeyDown);
+  };
+
+  componentWillUnmount() {
+    // Remove event listener when component is unmounted
+    document.removeEventListener("keydown", this.handleKeyDown);
+  };
+
+  // Event handler for keydown event
+  handleKeyDown = (event) => {
+    // Check if Ctrl key and 'h' key are pressed simultaneously
+    if (event.ctrlKey && event.key === "h") {
+      // Display alert and call logOut function
+      alert("Logging you out");
+      this.props.logOut();
+    }
+  };
+
+
 
   render() {
     // Courses
