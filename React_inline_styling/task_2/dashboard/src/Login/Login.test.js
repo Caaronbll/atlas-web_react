@@ -1,15 +1,8 @@
 import { shallow } from "enzyme";
 import React from "react";
 import Login from "./Login";
-import { StyleSheetTestUtils } from "aphrodite";
 
 describe("Login", () => {
-  beforeAll(() => {
-    StyleSheetTestUtils.suppressStyleInjection();
-  });
-  afterAll(() => {
-    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-  });
   //doesnt crash
   test("renders without crashing", () => {
     const wrapper = shallow(<Login />);

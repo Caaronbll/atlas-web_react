@@ -1,15 +1,8 @@
 import { shallow } from "enzyme";
 import React from "react";
 import Header from "./Header";
-import { StyleSheetTestUtils } from "aphrodite";
 
 describe("Header", () => {
-  beforeAll(() => {
-    StyleSheetTestUtils.suppressStyleInjection();
-  });
-  afterAll(() => {
-    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-  });
   //doesnt crash
   test("renders without crashing", () => {
     const wrapper = shallow(<Header />);

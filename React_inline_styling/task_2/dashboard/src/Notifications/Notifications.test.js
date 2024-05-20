@@ -1,15 +1,8 @@
 import { shallow } from "enzyme";
 import React from "react";
 import Notifications from "./Notifications";
-import { StyleSheetTestUtils } from "aphrodite";
 
 describe("Notifications", () => {
-  beforeAll(() => {
-        StyleSheetTestUtils.suppressStyleInjection();
-    });
-    afterAll(() => {
-        StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-    });
     // doesnt crash
     test("renders without crashing", () => {
         const wrapper = shallow(<Notifications />);
