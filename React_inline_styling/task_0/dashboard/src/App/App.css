@@ -1,0 +1,20 @@
+/* APP CSS */
+
+:root {
+    --main-color: #e01d3f;
+  }
+/*  
+  .App {
+     border-bottom: 3px solid var(--main-color); 
+  }
+  */
+  .App-body {
+    display: flex;
+    width: max-content;
+    margin: 40px;
+  }
+
+  .App-footer {
+    background-color: #fff;
+    padding: 10px;
+  }

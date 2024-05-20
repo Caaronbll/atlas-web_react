@@ -1,1 +1,10 @@
 /* APP CSS */
+
+.App {
+    border-bottom: 3px solid #e01d3f;
+}
+
+.App-body {
+    display: flex;
+    justify-content: center;
+}
