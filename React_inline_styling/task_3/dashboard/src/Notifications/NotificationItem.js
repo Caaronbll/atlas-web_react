@@ -37,12 +37,25 @@ NotificationItem.propTypes = {
   id: PropTypes.number,
 };
 
+const screenSize = {
+  small: "@media screen and (max-width: 900px)",
+}
+
+const smallItem = {
+  listStyle: 'none',
+  borderBottom: '1px solid black',
+  padding: '10px 8px',
+  fontSize: '20px',
+}
+
 const styles = StyleSheet.create({
   default: {
     color: 'blue',
+    [screenSize.small]: smallItem
   },
   urgent: {
     color:'red',
+    [screenSize.small]: smallItem
   },
 });
 
