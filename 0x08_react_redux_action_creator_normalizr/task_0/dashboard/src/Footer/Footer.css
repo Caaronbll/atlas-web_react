@@ -1,0 +1,12 @@
+/* FOOTER CSS */
+
+.App-footer {
+    border-top: 3px solid #e01d3f;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    font-style: italic;
+    background-color: #fff;
+}
