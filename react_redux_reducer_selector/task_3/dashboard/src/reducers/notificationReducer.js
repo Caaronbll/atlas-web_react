@@ -31,6 +31,7 @@ const notificationReducer = (state = initialState, action) => {
                     if (notification.id === action.index) {
                         current.isRead = true;
                     }
+                    return current;
                 }),
             };
         case SET_TYPE_FILTER:
